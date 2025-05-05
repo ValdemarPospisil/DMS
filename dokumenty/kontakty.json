@@ -1,0 +1,190 @@
+{
+  "kontakty": [
+    {
+      "id": 1,
+      "typ": "dodavatel",
+      "nazev": "IT Systémy s.r.o.",
+      "ico": "12345678",
+      "dic": "CZ12345678",
+      "adresa": {
+        "ulice": "U Kříže 123",
+        "mesto": "Praha",
+        "psc": "160 00",
+        "zeme": "Česká republika"
+      },
+      "kontaktni_osoby": [
+        {
+          "jmeno": "Martin Svoboda",
+          "pozice": "obchodní zástupce",
+          "telefon": "+420 777 123 456",
+          "email": "martin.svoboda@itsystemy.cz"
+        },
+        {
+          "jmeno": "Jana Nováková",
+          "pozice": "účetní",
+          "telefon": "+420 777 456 789",
+          "email": "jana.novakova@itsystemy.cz"
+        }
+      ],
+      "bankovni_spojeni": {
+        "cislo_uctu": "123456789/0100",
+        "banka": "Komerční banka",
+        "iban": "CZ6501000000000123456789"
+      },
+      "kategorie": ["IT služby", "Software", "Konzultace"],
+      "poznamky": "Pravidelná měsíční fakturace za správu serverů a podporu.",
+      "aktivni": true
+    },
+    {
+      "id": 2,
+      "typ": "dodavatel",
+      "nazev": "Kancelářské potřeby PLUS",
+      "ico": "87654321",
+      "dic": "CZ87654321",
+      "adresa": {
+        "ulice": "Dlouhá 456",
+        "mesto": "Brno",
+        "psc": "602 00",
+        "zeme": "Česká republika"
+      },
+      "kontaktni_osoby": [
+        {
+          "jmeno": "Petr Novotný",
+          "pozice": "jednatel",
+          "telefon": "+420 602 123 456",
+          "email": "petr.novotny@kancelar-plus.cz"
+        }
+      ],
+      "bankovni_spojeni": {
+        "cislo_uctu": "987654321/0300",
+        "banka": "ČSOB",
+        "iban": "CZ7703000000000987654321"
+      },
+      "kategorie": ["Kancelářské potřeby", "Papírenské zboží"],
+      "poznamky": "Dobrá dostupnost zboží, občas delší dodací lhůta.",
+      "aktivni": true
+    },
+    {
+      "id": 3,
+      "typ": "dodavatel",
+      "nazev": "Telco Provider a.s.",
+      "ico": "36925814",
+      "dic": "CZ36925814",
+      "adresa": {
+        "ulice": "Komunikační 789",
+        "mesto": "Praha",
+        "psc": "130 00",
+        "zeme": "Česká republika"
+      },
+      "kontaktni_osoby": [
+        {
+          "jmeno": "Jiří Dvořák",
+          "pozice": "account manager",
+          "telefon": "+420 775 888 999",
+          "email": "jiri.dvorak@telcoprovider.cz"
+        }
+      ],
+      "bankovni_spojeni": {
+        "cislo_uctu": "123456789/0800",
+        "banka": "Česká spořitelna",
+        "iban": "CZ9108000000000123456789"
+      },
+      "kategorie": ["Telekomunikace", "Internet", "Mobilní služby"],
+      "poznamky": "Firemní paušály a internetové připojení pro všechny pobočky.",
+      "aktivni": true
+    },
+    {
+      "id": 4,
+      "typ": "klient",
+      "nazev": "ABC Company s.r.o.",
+      "ico": "12340987",
+      "dic": "CZ12340987",
+      "adresa": {
+        "ulice": "Hlavní 123",
+        "mesto": "Praha",
+        "psc": "150 00",
+        "zeme": "Česká republika"
+      },
+      "kontaktni_osoby": [
+        {
+          "jmeno": "Petr Svoboda",
+          "pozice": "jednatel",
+          "telefon": "+420 602 876 543",
+          "email": "petr.svoboda@abccompany.cz"
+        },
+        {
+          "jmeno": "Lucie Černá",
+          "pozice": "finanční ředitelka",
+          "telefon": "+420 602 765 432",
+          "email": "lucie.cerna@abccompany.cz"
+        }
+      ],
+      "bankovni_spojeni": {
+        "cislo_uctu": "123498765/0100",
+        "banka": "Komerční banka",
+        "iban": "CZ9501000000000123498765"
+      },
+      "kategorie": ["VIP klient", "IT služby"],
+      "poznamky": "Významný klient, vyžaduje prioritní podporu.",
+      "aktivni": true
+    },
+    {
+      "id": 5,
+      "typ": "klient",
+      "nazev": "XYZ Solutions a.s.",
+      "ico": "98765432",
+      "dic": "CZ98765432",
+      "adresa": {
+        "ulice": "Technologická 456",
+        "mesto": "Brno",
+        "psc": "612 00",
+        "zeme": "Česká republika"
+      },
+      "kontaktni_osoby": [
+        {
+          "jmeno": "Tomáš Hájek",
+          "pozice": "CEO",
+          "telefon": "+420 602 222 333",
+          "email": "tomas.hajek@xyzsolutions.cz"
+        }
+      ],
+      "bankovni_spojeni": {
+        "cislo_uctu": "111222333/0300",
+        "banka": "ČSOB",
+        "iban": "CZ5503000000000111222333"
+      },
+      "kategorie": ["Software", "Konzultace"],
+      "poznamky": "Nový klient od ledna 2024, spolupráce na vývoji softwaru.",
+      "aktivni": true
+    },
+    {
+      "id": 6,
+      "typ": "klient",
+      "nazev": "Městský úřad Kolín",
+      "ico": "00235440",
+      "dic": "CZ00235440",
+      "adresa": {
+        "ulice": "Karlovo náměstí 78",
+        "mesto": "Kolín",
+        "psc": "280 12",
+        "zeme": "Česká republika"
+      },
+      "kontaktni_osoby": [
+        {
+          "jmeno": "Jan Veselý",
+          "pozice": "vedoucí IT oddělení",
+          "telefon": "+420 321 748 111",
+          "email": "jan.vesely@mukolin.cz"
+        }
+      ],
+      "bankovni_spojeni": {
+        "cislo_uctu": "19-7482100277/0100",
+        "banka": "Komerční banka",
+        "iban": "CZ8501000000197482100277"
+      },
+      "kategorie": ["Veřejný sektor", "IT správa"],
+      "poznamky": "Smlouva na 3 roky, pravidelné čtvrtletní faktury.",
+      "aktivni": true
+    }
+  ]
+}

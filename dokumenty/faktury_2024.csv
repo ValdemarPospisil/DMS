@@ -1,0 +1,21 @@
+Číslo faktury,Datum vystavení,Datum splatnosti,Dodavatel,IČO dodavatele,Částka bez DPH,DPH,Částka celkem,Měna,Kategorie,Status
+2024-001,2024-01-05,2024-01-19,"IT Systémy s.r.o.",12345678,8500,1785,10285,CZK,IT služby,Zaplaceno
+2024-002,2024-01-10,2024-01-24,"Kancelářské potřeby PLUS",87654321,1250,262.5,1512.5,CZK,Kancelářské potřeby,Zaplaceno
+2024-003,2024-01-15,2024-01-29,"Design Web Studio",45678123,15000,3150,18150,CZK,Marketing,Zaplaceno
+2024-004,2024-01-20,2024-02-03,"Účetní služby Novák",78912345,4500,945,5445,CZK,Účetnictví,Zaplaceno
+2024-005,2024-02-01,2024-02-15,"Telco Provider a.s.",36925814,3200,672,3872,CZK,Telekomunikace,Zaplaceno
+2024-006,2024-02-08,2024-02-22,"IT Systémy s.r.o.",12345678,8500,1785,10285,CZK,IT služby,Zaplaceno
+2024-007,2024-02-15,2024-02-29,"Školení a rozvoj s.r.o.",95175365,12000,2520,14520,CZK,Vzdělávání,Zaplaceno
+2024-008,2024-02-22,2024-03-07,"Kancelářské potřeby PLUS",87654321,2150,451.5,2601.5,CZK,Kancelářské potřeby,Zaplaceno
+2024-009,2024-03-01,2024-03-15,"IT Systémy s.r.o.",12345678,8500,1785,10285,CZK,IT služby,Zaplaceno
+2024-010,2024-03-10,2024-03-24,"Právní služby JUDr. Černý",14725836,7500,1575,9075,CZK,Právní služby,Zaplaceno
+2024-011,2024-03-18,2024-04-01,"Telco Provider a.s.",36925814,3200,672,3872,CZK,Telekomunikace,Zaplaceno
+2024-012,2024-03-25,2024-04-08,"Kancelářské potřeby PLUS",87654321,1850,388.5,2238.5,CZK,Kancelářské potřeby,Zaplaceno
+2024-013,2024-04-01,2024-04-15,"IT Systémy s.r.o.",12345678,8500,1785,10285,CZK,IT služby,Zaplaceno
+2024-014,2024-04-05,2024-04-19,"Údržba budov a.s.",25836914,5600,1176,6776,CZK,Údržba,Zaplaceno
+2024-015,2024-04-12,2024-04-26,"Marketingová agentura SMART",36914725,22000,4620,26620,CZK,Marketing,Nezaplaceno
+2024-016,2024-04-20,2024-05-04,"Účetní služby Novák",78912345,4500,945,5445,CZK,Účetnictví,Nezaplaceno
+2024-017,2024-04-25,2024-05-09,"Školení a rozvoj s.r.o.",95175365,8500,1785,10285,CZK,Vzdělávání,Nezaplaceno
+2024-018,2024-05-01,2024-05-15,"IT Systémy s.r.o.",12345678,8500,1785,10285,CZK,IT služby,Nezaplaceno
+2024-019,2024-05-01,2024-05-15,"Telco Provider a.s.",36925814,3200,672,3872,CZK,Telekomunikace,Nezaplaceno
+2024-020,2024-05-03,2024-05-17,"Kancelářské potřeby PLUS",87654321,1950,409.5,2359.5,CZK,Kancelářské potřeby,Nezaplaceno

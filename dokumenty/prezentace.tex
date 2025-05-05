@@ -1,0 +1,160 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usetheme{boxes}
+\usecolortheme{lily}
+
+\title{Paperless-ngx}
+\subtitle{Moderní systém pro správu dokumentů}
+\author{Valdemar Pospíšil}
+\institute{UJEP - PřF}
+\date{\today}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{red},
+  breaklines=true,
+  showstringspaces=false
+}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Obsah}
+  \tableofcontents
+\end{frame}
+
+\section{Úvod do Paperless-ngx}
+
+\begin{frame}{Co je Paperless-ngx?}
+  \begin{itemize}
+    \item Open-source systém pro správu dokumentů
+    \item Fork původního projektu „Paperless“
+    \item Určen pro digitalizaci, organizaci a vyhledávání dokumentů
+    \item Umožňuje skenování, OCR, indexování, třídění, štítkování
+    \item Moderní webové rozhraní a REST API
+  \end{itemize}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{paperless-logo.png}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Historie a vývoj}
+  \begin{itemize}
+    \item 2015: Vznik projektu Paperless (Daniel Quinn)
+    \item 2020: Fork Paperless-ng – modernizace
+    \item 2021+: Paperless-ngx – aktivní komunita, časté aktualizace
+    \item Podpora Dockeru, OCR, REST API, pravidel pro třídění dokumentů
+  \end{itemize}
+\end{frame}
+
+\section{Architektura a funkce}
+
+\begin{frame}{Architektura systému}
+  \begin{itemize}
+    \item Backend: Python (Django)
+    \item Frontend: Angular/TypeScript
+    \item Databáze: PostgreSQL / MariaDB / SQLite
+    \item Redis: fronta úloh
+    \item Celé běží v Docker kontejnerech
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Klíčové funkce Paperless-ngx}
+  \begin{itemize}
+    \item OCR (Tesseract) – převod naskenovaného textu
+    \item Automatická klasifikace dokumentů podle pravidel
+    \item Fulltextové vyhledávání a indexace obsahu
+    \item Podpora tagů, metadata, spotřeba (účtenky)
+    \item REST API pro integraci
+    \item Uživatelé a oprávnění
+    \item Export, import, zálohování
+  \end{itemize}
+\end{frame}
+
+\section{Pro koho je Paperless-ngx vhodný}
+
+\begin{frame}{Cílová skupina}
+  \begin{itemize}
+    \item Jednotlivci – digitalizace domácích dokumentů
+    \item Malé firmy – archivace smluv, faktur, objednávek
+    \item IT nadšenci – automatizace, skriptování pomocí API
+    \item Instituce – interní správa dokumentů, bezpečné úložiště
+  \end{itemize}
+\end{frame}
+
+\section{Výhody a nevýhody}
+
+\begin{frame}{Výhody}
+  \begin{itemize}
+    \item Zdarma a open-source
+    \item Aktivní vývoj, dokumentace
+    \item Jednoduché nasazení přes Docker
+    \item Webové rozhraní přístupné z více zařízení
+    \item Automatizace pomocí pravidel a API
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Nevýhody}
+  \begin{itemize}
+    \item Nutnost vlastní správy a hostingu
+    \item Složitější na začátku pro ne-IT uživatele
+    \item Omezené možnosti sdílení (např. ne jako Google Drive)
+    \item Nutné zálohování a údržba databáze
+  \end{itemize}
+\end{frame}
+
+\section{Nasazení pomocí Docker Compose}
+
+\begin{frame}[fragile]{Ukázka Docker Compose}
+  \begin{lstlisting}
+version: "3.4"
+services:
+  paperless:
+    image: ghcr.io/paperless-ngx/paperless-ngx
+    restart: always
+    ports:
+      - 8000:8000
+    volumes:
+      - ./data:/usr/src/paperless/data
+      - ./media:/usr/src/paperless/media
+    environment:
+      PAPERLESS_REDIS: redis://redis:6379
+      PAPERLESS_DBHOST: db
+  redis:
+    image: redis
+    restart: always
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
+  \end{lstlisting}
+\end{frame}
+
+\section{Závěr}
+
+\begin{frame}{Shrnutí}
+  \begin{itemize}
+    \item Paperless-ngx je výkonný DMS pro domácí i firemní použití
+    \item Umožňuje automatickou správu a vyhledávání dokumentů
+    \item Nasazení pomocí Dockeru je jednoduché a rychlé
+    \item Ideální pro IT nadšence a malé firmy
+  \end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Návod k použití Paperless-ngx</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 25px;
+        }
+        h3 {
+            color: #3498db;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .tip {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning {
+            background-color: #fff5e6;
+            border-left: 4px solid #e67e22;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f7f7f7;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Návod k použití Paperless-ngx</h1>
+        
+        <p>Tento dokument slouží jako základní příručka pro práci se systémem Paperless-ngx ve vaší organizaci.</p>
+        
+        <h2>Obsah</h2>
+        <ol>
+            <li><a href="#prihlaseni">Přihlášení do systému</a></li>
+            <li><a href="#nahravani">Nahrávání dokumentů</a></li>
+            <li><a href="#vyhledavani">Vyhledávání dokumentů</a></li>
+            <li><a href="#tagy">Práce s tagy a kategoriemi</a></li>
+            <li><a href="#exportovani">Exportování dokumentů</a></li>
+            <li><a href="#tipy">Tipy a triky</a></li>
+        </ol>
+        
+        <h2 id="prihlaseni">1. Přihlášení do systému</h2>
+        <p>Systém Paperless-ngx je dostupný na adrese <code>http://server.firma.cz:8085</code>. Pro přihlášení použijte své firemní přihlašovací údaje.</p>
+        
+        <div class="tip">
+            <strong>Tip:</strong> Při prvním přihlášení budete vyzváni ke změně hesla. Nové heslo musí obsahovat alespoň 8 znaků, včetně jednoho velkého písmena, číslice a speciálního znaku.
+        </div>
+        
+        <h2 id="nahravani">2. Nahrávání dokumentů</h2>
+        <p>Dokumenty do systému můžete nahrát několika způsoby:</p>
+        
+        <h3>2.1 Přímé nahrání přes webové rozhraní</h3>
+        <ol>
+            <li>Klikněte na tlačítko <strong>Nahrát</strong> v horní navigační liště.</li>
+            <li>Vyberte soubor(y) ze svého počítače nebo je přetáhněte do vyznačené oblasti.</li>
+            <li>Vyčkejte na dokončení zpracování (OCR a indexace).</li>
+        </ol>
+        
+        <h3>2.2 Sledovaná složka</h3>
+        <p>Dokumenty můžete také ukládat do sledované síťové složky <code>\\server\paperless\consume</code>, odkud budou automaticky importovány do systému.</p>
+        
+        <h3>2.3 E-mailový import</h3>
+        <p>Dokumenty lze posílat jako přílohy na adresu <code>import@paperless.firma.cz</code>. Předmět e-mailu bude použit jako název dokumentu.</p>
+        
+        <div class="warning">
+            <strong>Upozornění:</strong> Systém automaticky zpracovává pouze soubory ve formátech PDF, JPG, PNG, TIFF a TXT. Ostatní formáty budou ignorovány.
+        </div>
+        
+        <h2 id="vyhledavani">3. Vyhledávání dokumentů</h2>
+        <p>Paperless-ngx nabízí pokročilé možnosti vyhledávání:</p>
+        
+        <h3>3.1 Fulltextové vyhledávání</h3>
+        <p>Jednoduše zadejte hledaný text do vyhledávacího pole v horní části obrazovky.</p>
+        
+        <h3>3.2 Pokročilé filtrování</h3>
+        <p>Pro složitější dotazy můžete použít pokročilé filtrování:</p>
+        <ul>
+            <li><code>correspondent:Novák</code> - dokumenty od korespondenta "Novák"</li>
+            <li><code>created:2024-04</code> - dokumenty vytvořené v dubnu 2024</li>
+            <li><code>tag:faktura</code> - dokumenty označené tagem "faktura"</li>
+            <li><code>content:"projektový plán"</code> - dokumenty obsahující frázi "projektový plán"</li>
+        </ul>
+        
+        <h2 id="tagy">4. Práce s tagy a kategoriemi</h2>
+        <p>Pro lepší organizaci dokumentů používejte systém tagů a kategorií:</p>
+        
+        <h3>4.1 Přidání tagu k dokumentu</h3>
+        <ol>
+            <li>Otevřete detail dokumentu kliknutím na jeho název.</li>
+            <li>V pravém panelu klikněte na <strong>Upravit</strong>.</li>
+            <li>V sekci "Tagy" přidejte požadované tagy.</li>
+            <li>Klikněte na <strong>Uložit</strong>.</li>
+        </ol>
+        
+        <h3>4.2 Automatické tagování</h3>
+        <p>Systém lze nastavit tak, aby automaticky přiřazoval tagy na základě obsahu dokumentu:</p>
+        <ol>
+            <li>Přejděte do sekce <strong>Nastavení</strong> > <strong>Pravidla pro automatizaci</strong>.</li>
+            <li>Klikněte na <strong>Přidat pravidlo</strong>.</li>
+            <li>Definujte podmínky (např. "dokument obsahuje slovo 'faktura'") a akce (např. "přidat tag 'faktura'").</li>
+            <li>Uložte pravidlo.</li>
+        </ol>
+        
+        <h2 id="exportovani">5. Exportování dokumentů</h2>
+        <p>Pro export dokumentů ze systému:</p>
+        <ol>
+            <li>Vyberte dokument(y), které chcete exportovat.</li>
+            <li>Klikněte na ikonu <strong>Stáhnout</strong> v horní liště.</li>
+            <li>Vyberte formát exportu (originál, PDF, archiv).</li>
+        </ol>
+        
+        <h2 id="tipy">6. Tipy a triky</h2>
+        
+        <h3>6.1 Klávesové zkratky</h3>
+        <table>
+            <tr>
+                <th>Zkratka</th>
+                <th>Funkce</th>
+            </tr>
+            <tr>
+                <td><code>Alt+N</code></td>
+                <td>Nahrát nový dokument</td>
+            </tr>
+            <tr>
+                <td><code>/</code></td>
+                <td>Přejít do vyhledávacího pole</td>
+            </tr>
+            <tr>
+                <td><code>Alt+D</code></td>
+                <td>Smazat vybraný dokument</td>
+            </tr>
+            <tr>
+                <td><code>Alt+E</code></td>
+                <td>Upravit vybraný dokument</td>
+            </tr>
+        </table>
+        
+        <h3>6.2 Hromadné operace</h3>
+        <p>Pro efektivnější práci s více dokumenty najednou:</p>
+        <ol>
+            <li>Zaškrtněte dokumenty pomocí checkboxů vlevo.</li>
+            <li>V horní liště se objeví možnosti pro hromadné operace: úprava, export, smazání.</li>
+        </ol>
+        
+        <div class="tip">
+            <strong>Tip pro výkon:</strong> Pokud máte problémy s rychlostí systému, zkuste v nastavení snížit počet dokumentů zobrazených na stránku z výchozích 25 na 10.
+        </div>
+        
+        <hr>
+        
+        <p><em>Tento návod byl vytvořen IT oddělením. Poslední aktualizace: 4. května 2024.</em></p>
+        <p><em>V případě problémů nebo dotazů kontaktujte podporu na <a href="mailto:podpora@firma.cz">podpora@firma.cz</a>.</em></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\geometry{margin=2.5cm}
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{TECHNICKÁ ZPRÁVA}} \\
+    \vspace{0.5cm}
+    {\large \textbf{Analýza výkonnosti databázového systému}} \\
+    \vspace{0.3cm}
+    Interní dokument společnosti DataSystems s.r.o. \\
+    \vspace{0.2cm}
+    Verze 1.2 - květen 2024
+\end{center}
+
+\vspace{1cm}
+
+\section{Úvod}
+Tento dokument obsahuje výsledky analýzy výkonnosti databázového systému PostgreSQL v produkčním prostředí. Analýza byla provedena na základě požadavku vedení IT oddělení z důvodu zhoršující se odezvy systému během špičkového zatížení.
+
+\section{Metodologie testování}
+Pro účely testování byl použit nástroj pgBench, který umožňuje simulovat různé typy zátěže na databázový systém. Testování probíhalo v izolovaném prostředí s následující konfigurací:
+
+\begin{itemize}
+    \item Server: Dell PowerEdge R740, 2x Intel Xeon Gold 6248R, 384 GB RAM
+    \item Operační systém: Ubuntu Server 22.04 LTS
+    \item PostgreSQL verze: 15.2
+    \item Testovací data: 500 GB (kopie produkčních dat)
+\end{itemize}
+
+\section{Výsledky měření}
+Výkonnostní testy byly zaměřeny na tyto klíčové oblasti:
+\begin{itemize}
+    \item Propustnost systému při různých počtech současných připojení
+    \item Doba odezvy na komplexní dotazy
+    \item Využití systémových prostředků během zátěže
+\end{itemize}
+
+\subsection{Propustnost systému}
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Počet klientů} & \textbf{Transakce/s} & \textbf{Latence [ms]} & \textbf{Využití CPU [\%]} \\
+\midrule
+10 & 352 & 28 & 25 \\
+50 & 1245 & 40 & 58 \\
+100 & 1876 & 53 & 75 \\
+200 & 2134 & 94 & 87 \\
+500 & 2210 & 226 & 98 \\
+\bottomrule
+\end{tabular}
+\caption{Výsledky testů propustnosti}
+\end{table}
+
+\subsection{Identifikované problémy}
+Na základě provedených testů byly identifikovány následující problémy:
+\begin{enumerate}
+    \item Nedostatečná velikost sdílené paměti (shared\_buffers)
+    \item Neoptimální nastavení write-ahead log (WAL)
+    \item Chybějící indexy na často používaných dotazech
+    \item Nevhodná strategie vacuum
+\end{enumerate}
+
+\section{Navrhovaná řešení}
+Pro zlepšení výkonnosti doporučujeme provést následující změny v konfiguraci:
+
+\begin{itemize}
+    \item Zvýšení parametru shared\_buffers na 25\% dostupné RAM (96 GB)
+    \item Optimalizace WAL parametrů:
+    \begin{itemize}
+        \item wal\_level = replica
+        \item max\_wal\_size = 16GB
+        \item min\_wal\_size = 4GB
+    \end{itemize}
+    \item Vytvoření indexů pro kritické dotazy (viz příloha A)
+    \item Nastavení agresivnějšího autovacuum:
+    \begin{itemize}
+        \item autovacuum\_vacuum\_scale\_factor = 0.05
+        \item autovacuum\_analyze\_scale\_factor = 0.02
+    \end{itemize}
+\end{itemize}
+
+\section{Dopad změn}
+Po implementaci navrhovaných změn v testovacím prostředí došlo k následujícím zlepšením:
+\begin{itemize}
+    \item Zvýšení propustnosti o 45\% při 200 současných připojeních
+    \item Snížení latence o 62\% při špičkovém zatížení
+    \item Snížení využití CPU při stejném zatížení o 15-20\%
+\end{itemize}
+
+\section{Závěr}
+Na základě provedených testů a analýz doporučujeme implementovat navrhované změny v produkčním prostředí. Před implementací je však nutné provést zálohu systému a naplánovat údržbové okno s minimálním dopadem na uživatele.
+
+\vspace{1cm}
+
+\begin{flushright}
+Zpracoval: Ing. Tomáš Veselý \\
+Datum: 4. 5. 2024
+\end{flushright}
+
+\end{document}
